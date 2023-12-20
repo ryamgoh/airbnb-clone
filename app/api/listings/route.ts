@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       bathroomCount,
       guestCount,
       locationValue: location.value,
-      price,
+      price: Number(price), // Had to change this to Number() because of a bug in Prisma
       userId: currentUser.id,
     },
   });
